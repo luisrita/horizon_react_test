@@ -1,10 +1,18 @@
 import React, {Component} from 'react';
+import Messages from './messages';
 
 class App extends Component {
   render() {
     return (
       <div>
-        This will be the structure in which we sart building our App.
+        <form>
+          <div className="center">
+            <button>Send Message</button>
+            <input placeholder='By'></input>
+            <input placeholder='write message here'></input>
+          </div>
+        </form>
+        <Messages />
       </div>
     )
   }

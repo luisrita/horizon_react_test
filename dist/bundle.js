@@ -28971,6 +28971,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _messages = __webpack_require__(555);
+
+	var _messages2 = _interopRequireDefault(_messages);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var App = function (_Component) {
@@ -28987,7 +28991,22 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'This will be the structure in which we sart building our App.'
+	        _react2.default.createElement(
+	          'form',
+	          null,
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'center' },
+	            _react2.default.createElement(
+	              'button',
+	              null,
+	              'Send Message'
+	            ),
+	            _react2.default.createElement('input', { placeholder: 'By' }),
+	            _react2.default.createElement('input', { placeholder: 'write message here' })
+	          )
+	        ),
+	        _react2.default.createElement(_messages2.default, null)
 	      );
 	    }
 	  }]);
@@ -30523,6 +30542,154 @@
 	var $export = __webpack_require__(481)
 	// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 	$export($export.S, 'Object', {create: __webpack_require__(512)});
+
+/***/ },
+/* 555 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(469);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(495);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(496);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(500);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(547);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(300);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _message = __webpack_require__(556);
+
+	var _message2 = _interopRequireDefault(_message);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Messages = function (_Component) {
+	  (0, _inherits3.default)(Messages, _Component);
+
+	  function Messages(props) {
+	    (0, _classCallCheck3.default)(this, Messages);
+
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Messages).call(this, props));
+
+	    _this.state = {
+	      convo: [{ text: 'this is text', author: '@steedhelix' }, { text: 'this is some text', author: '@steedhelix' }, { text: 'this is more text', author: '@steedhelix' }, { text: 'this is other text', author: '@steedhelix' }]
+	    };
+	    return _this;
+	  }
+
+	  (0, _createClass3.default)(Messages, [{
+	    key: 'render',
+	    value: function render() {
+	      var msgsjsx = this.state.convo.map(function (message, i) {
+	        return _react2.default.createElement(_message2.default, { msg: message, key: i });
+	      });
+
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'container-fluid' },
+	        ' ',
+	        msgsjsx,
+	        ' '
+	      );
+	    }
+	  }]);
+	  return Messages;
+	}(_react.Component);
+
+	exports.default = Messages;
+
+/***/ },
+/* 556 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _getPrototypeOf = __webpack_require__(469);
+
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+
+	var _classCallCheck2 = __webpack_require__(495);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(496);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _possibleConstructorReturn2 = __webpack_require__(500);
+
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+
+	var _inherits2 = __webpack_require__(547);
+
+	var _inherits3 = _interopRequireDefault(_inherits2);
+
+	var _react = __webpack_require__(300);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Message = function (_Component) {
+	  (0, _inherits3.default)(Message, _Component);
+
+	  function Message(props) {
+	    (0, _classCallCheck3.default)(this, Message);
+
+	    var _this = (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Message).call(this, props));
+
+	    _this.props = props;
+	    return _this;
+	  }
+
+	  (0, _createClass3.default)(Message, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'p',
+	          null,
+	          this.props.msg.author,
+	          ' : ',
+	          _react2.default.createElement(
+	            'span',
+	            null,
+	            this.props.msg.text
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	  return Message;
+	}(_react.Component);
+
+	exports.default = Message;
 
 /***/ }
 /******/ ]);
